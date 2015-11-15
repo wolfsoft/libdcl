@@ -1,0 +1,15 @@
+prefix=@prefix@
+exec_prefix=@exec_prefix@
+libdir=@libdir@
+includedir=@includedir@
+
+Name: dbPager Classes Library (network)
+Description: A C++ library for cross-platform application development
+Version: @VERSION@
+URL: http://libdcl.sf.net
+Requires: libdclbase = @VERSION@
+Conflicts:
+Libs: -L${libdir} -ldclbase -ldclnet
+Libs.private: -lm
+Cflags: -I${includedir}
+

@@ -1,0 +1,468 @@
+#
+# ru_RU.po
+# This file is part of dbPager Classes Library (DCL)
+#
+# Copyright (c) 2008 Dennis Prochko <wolfsoft@mail.ru>
+#
+# DCL is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation version 3.
+#
+# DCL is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with DCL; if not, write to the Free Software
+# Foundation, Inc., 51 Franklin St, Fifth Floor,
+# Boston, MA  02110-1301  USA
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: libdcl 0.1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-11-11 15:13+0300\n"
+"PO-Revision-Date: 2015-06-03 04:35+0300\n"
+"Last-Translator: Dennis Prochko <wolfsoft@mail.ru>\n"
+"Language-Team: ru <wolfsoft@mail.ru>\n"
+"Language: ru_RU\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.4\n"
+
+#: src/dcl-gtk/gtk_application.cpp:41 src/dcl/application.cpp:78
+#: src/dcl/posix/daemon_application.cpp:194
+#: src/dcl/win32/daemon_application.cpp:218
+msgid "Fatal error: {0}"
+msgstr "Неустранимая ошибка: {0}"
+
+#: src/dcl-gtk/gtk_dialogs.cpp:61
+msgid "Can't initialize the GtkMessageDialog"
+msgstr "Невозможно инициализировать GtkMessageDialog"
+
+#: src/dcl/app_config.cpp:46
+msgid "configuration file not found; default values will be used"
+msgstr ""
+"файл конфигурации не был найден; будут использованы значения по умолчанию"
+
+#: src/dcl/application.cpp:41
+msgid "show this help page"
+msgstr "показать эту страницу помощи"
+
+#: src/dcl/application.cpp:102
+msgid "syntax error"
+msgstr "синтаксическая ошибка"
+
+#: src/dcl/application.cpp:123
+msgid "Usage: "
+msgstr "Использование: "
+
+#: src/dcl/application.cpp:129
+msgid "[options...] "
+msgstr "[опции...] "
+
+#: src/dcl/application.cpp:142
+msgid "file(s)..."
+msgstr "файл(ы)..."
+
+#: src/dcl/application.cpp:151
+msgid "Where available options are:"
+msgstr "Где доступными опциями являются:"
+
+#: src/dcl/cmdline_parameters.cpp:114
+msgid "invalid option '{0}'"
+msgstr "неверная опция '{0}'"
+
+#: src/dcl/cmdline_parameters.cpp:116
+msgid "option unrecognized"
+msgstr "опция нераспознана"
+
+#: src/dcl/cmdline_parameters.cpp:120
+msgid "option '{0}' requires an argument"
+msgstr "опция '{0}' требует аргумент"
+
+#: src/dcl/connection.cpp:53
+msgid "Can't initialize ODBC environment"
+msgstr "Невозможно осуществить инициализацию окружения ODBC"
+
+#: src/dcl/connection.cpp:60
+msgid "Can't allocate ODBC environment handle"
+msgstr "Невозможно осуществить инициализацию окружения ODBC"
+
+#: src/dcl/connection.cpp:67
+msgid "Can't setup ODBC environment version"
+msgstr "Невозможно установить версию окружения ODBC"
+
+#: src/dcl/connection.cpp:79
+msgid "Can't allocate ODBC connection handle"
+msgstr "Невозможно осуществить подключение через ODBC"
+
+#: src/dcl/connection.cpp:111
+msgid "Can't open the database {0}: {1}"
+msgstr "Невозможно открыть базу данных {0}: {1}"
+
+#: src/dcl/connection.cpp:126
+msgid "Can't open the database: {0}"
+msgstr "Невозможно открыть базу данных: {0}"
+
+#: src/dcl/connection.cpp:158
+msgid "Invalid transaction isolation level"
+msgstr "Неверный уровень изоляции транзакции"
+
+#: src/dcl/connection.cpp:164
+msgid "Can't setup the transaction isolation level: {0}"
+msgstr "Невозможно установить уровень изоляции транзакции: {0}"
+
+#: src/dcl/connection.cpp:171
+msgid "Can't turn off autocommit mode: {0}"
+msgstr "Невозможно отключить режим автоматического подтверждения: {0}"
+
+#: src/dcl/connection.cpp:180
+msgid "Transaction commit failed: {0}"
+msgstr "Не удалось подтвердить транзакцию: {0}"
+
+#: src/dcl/connection.cpp:187 src/dcl/connection.cpp:203
+msgid "Can't turn on autocommit mode: {0}"
+msgstr "Невозможно включить режим автоматического подтверждения: {0}"
+
+#: src/dcl/connection.cpp:196
+msgid "Transaction rollback failed: {0}"
+msgstr "Не удалось отменить транзакцию: {0}"
+
+#: src/dcl/factory.cpp:30
+msgid "Can't create class {0}: the class with this name is not registered"
+msgstr "Невозможно создать класс {0}: класс с таким именем не зарегистрирован"
+
+#: src/dcl/factory.cpp:35
+msgid ""
+"Can't register class {0}: the class with this name is already registered"
+msgstr ""
+"Невозможно зарегистрировать класс {0}: класс с таким именем уже "
+"зарегистрирован"
+
+#: src/dcl/factory.cpp:40
+msgid "Can't unregister class {0}: the class is not registered"
+msgstr "Невозможно отменить регистрацию класса {0}: класс не зарегистрирован"
+
+#: src/dcl/gui_application.cpp:57
+msgid "Invalid GUI frontend library"
+msgstr "Неверная библиотека обслуживания GUI"
+
+#: src/dcl/isapi_application.cpp:44
+msgid "The specified variable doesn't exist"
+msgstr "Заданная переменная не существует"
+
+#: src/dcl/isapi_application.cpp:112
+msgid "Can't obtain data from the web server"
+msgstr "Невозможно получить данные от web сервера"
+
+#: src/dcl/isapi_application.cpp:148
+msgid "Can't send data to the web server"
+msgstr "Невозможно отправить данные на web сервер"
+
+#: src/dcl/openssl_socket.cpp:61 src/dcl/openssl_socket.cpp:65
+msgid "can't initialize SSL context"
+msgstr "невозможно инициализировать SSL контекст"
+
+#: src/dcl/openssl_socket.cpp:81
+msgid "invalid CA certificate"
+msgstr "неправильный сертификат CA"
+
+#: src/dcl/openssl_socket.cpp:86
+msgid "can't load certificate file"
+msgstr "не удалось загрузить файл сертификата"
+
+#: src/dcl/openssl_socket.cpp:89
+msgid "can't load private key file"
+msgstr "не удалось загрузить файл закрытого ключа"
+
+#: src/dcl/openssl_socket.cpp:92
+msgid "private key is invalid"
+msgstr "неправильный закрытый ключ"
+
+#: src/dcl/posix/daemon_application.cpp:144
+msgid "configuration file reloaded"
+msgstr "файл конфигурации перезагружен"
+
+#: src/dcl/posix/daemon_application.cpp:167
+#: src/dcl/win32/daemon_application.cpp:273
+msgid "successfully started"
+msgstr "успешно запущено"
+
+#: src/dcl/posix/daemon_application.cpp:189
+#: src/dcl/win32/daemon_application.cpp:278
+msgid "successfully terminated"
+msgstr "успешно остановлено"
+
+#: src/dcl/posix/mutex_impl.cpp:47
+msgid "the mutex is already locked by the calling thread"
+msgstr "мьютекс уже заблокирован вызывающим потоком"
+
+#: src/dcl/posix/mutex_impl.cpp:50 src/dcl/posix/mutex_impl.cpp:60
+#: src/dcl/posix/mutex_impl.cpp:71
+msgid "the mutex has not been properly initialized"
+msgstr "мьютекс не был правильно инициализирован"
+
+#: src/dcl/posix/mutex_impl.cpp:68
+msgid "the calling thread does not own the mutex"
+msgstr "вызывающий поток не владеет мьютексом"
+
+#: src/dcl/posix/plugin_impl.cpp:103 src/dcl/win32/plugin_impl.cpp:101
+msgid "Plugin '{0}' can't create object '{1}'"
+msgstr "Библиотека расширения '{0}' не может создать объект '{1}'"
+
+#: src/dcl/posix/process_impl.cpp:98 src/dcl/posix/process_impl.cpp:102
+#: src/dcl/posix/process_impl.cpp:109
+msgid "pipe failed"
+msgstr "невозможно создать канал"
+
+#: src/dcl/posix/process_impl.cpp:135
+msgid "execv failed"
+msgstr "функция execv выполнена с ошибкой"
+
+#: src/dcl/posix/process_impl.cpp:137
+msgid "vfork failed"
+msgstr "функция vfork выполнена с ошибкой"
+
+#: src/dcl/posix/rwlock_impl.cpp:45 src/dcl/posix/rwlock_impl.cpp:76
+msgid "the rwlock is already locked by the calling thread"
+msgstr "объект блокировки rwlock уже заблокирован вызывающим потоком"
+
+#: src/dcl/posix/rwlock_impl.cpp:48 src/dcl/posix/rwlock_impl.cpp:58
+#: src/dcl/posix/rwlock_impl.cpp:69 src/dcl/posix/rwlock_impl.cpp:79
+#: src/dcl/posix/rwlock_impl.cpp:89 src/dcl/posix/rwlock_impl.cpp:100
+msgid "the rwlock has not been properly initialized"
+msgstr "объект блокировки rwlock не был правильно инициализирован"
+
+#: src/dcl/posix/rwlock_impl.cpp:66 src/dcl/posix/rwlock_impl.cpp:97
+msgid "the calling thread does not own the rwlock"
+msgstr "вызывающий поток не владеет объектом блокировки rwlock"
+
+#: src/dcl/posix/thread_impl.cpp:54 src/dcl/win32/thread_impl.cpp:59
+msgid ""
+"The system lacked the necessary resources to create another thread, or the "
+"system-imposed limit on the total number of threads in a process would be "
+"exceeded"
+msgstr ""
+"В системе отсутствуют необходимые ресурсы для создания еще одного потока или "
+"был превышен системный лимит максимального числа потоков на процесс"
+
+#: src/dcl/posix/thread_impl.cpp:60
+msgid "Can't create detached thread"
+msgstr "Невозможно создать отсоединенный поток"
+
+#: src/dcl/posix/thread_impl.cpp:64
+msgid ""
+"The caller does not have appropriate permission to set the required "
+"scheduling parameters or scheduling policy"
+msgstr ""
+"Вызывающий не имеет соответствующих прав на установку требуемых параметров "
+"планировщика или политики планирования"
+
+#: src/dcl/posix/thread_impl.cpp:70
+msgid "pthread_create() fails by unknown error"
+msgstr "вызов pthread_create() не удался из-за неизвестной ошибки"
+
+#: src/dcl/query.cpp:42
+msgid "Can't allocate ODBC statement handle"
+msgstr "Невозможно осуществить инициализацию оператора ODBC"
+
+#: src/dcl/query.cpp:103
+msgid "Can't prepare SQL statement: {0}"
+msgstr "Невозможно подготовить SQL запрос: {0}"
+
+#: src/dcl/query.cpp:119
+msgid "Can't obtain a columns count: {0}"
+msgstr "Невозможно определить количество столбцов: {0}"
+
+#: src/dcl/query.cpp:133
+msgid "Can't obtain column metadata: {0}"
+msgstr "Невозможно получить метаданные для столбца: {0}"
+
+#: src/dcl/query.cpp:163
+msgid "Can't assign SQL parameter: {0}"
+msgstr "Невозможно назначить SQL параметр: {0}"
+
+#: src/dcl/query.cpp:172 src/dcl/query.cpp:187
+msgid "Can't execute SQL statement: {0}"
+msgstr "Невозможно выполнить SQL запрос: {0}"
+
+#: src/dcl/query.cpp:231
+msgid "Can't fetch the data row: {0}"
+msgstr "Невозможно получить строку данных: {0}"
+
+#: src/dcl/query.cpp:259
+msgid "Can't retrieve data for column: {0}"
+msgstr "Невозможно получить данные для столбца: {0}"
+
+#: src/dcl/socket.cpp:111
+msgid "host '{0}' is not found"
+msgstr "узел '{0}' не найден"
+
+#: src/dcl/socket.cpp:115
+msgid "can't access host '{0}'"
+msgstr "невозможно обратиться к узлу '{0}'"
+
+#: src/dcl/socket.cpp:118
+msgid "can't resolve host '{0}'"
+msgstr "невозможно получить адрес узла '{0}'"
+
+#: src/dcl/socket.cpp:150 src/dcl/socket.cpp:170
+msgid "can't assign an address to a socket"
+msgstr "Невозможно назначить адрес сокету"
+
+#: src/dcl/socket.cpp:186
+msgid "can't setup socket options"
+msgstr "Невозможно установить опции сокета"
+
+#: src/dcl/socket.cpp:192
+msgid "can't bind to the address or port"
+msgstr "Невозможно привязаться к адресу или порту"
+
+#: src/dcl/socket.cpp:198
+msgid "can't listen socket"
+msgstr "Невозможно перевести сокет в режим прослушивания"
+
+#: src/dcl/socket.cpp:210
+msgid "can't accept incoming connection"
+msgstr "Невозможно принять входящее соединение"
+
+#: src/dcl/socket.cpp:262 src/dcl/socket.cpp:272
+msgid "can't change socket blocking state"
+msgstr "Невозможно изменить состояние блокирования сокета"
+
+#: src/dcl/socket.cpp:266
+msgid "can't get socket blocking state"
+msgstr "Невозможно определить состояние блокирования сокета"
+
+#: src/dcl/socket.cpp:279 src/dcl/socket.cpp:285 src/dcl/socket.cpp:295
+msgid "can't create socket"
+msgstr "Невозможно создать сокет"
+
+#: src/dcl/tcp_server.cpp:170
+msgid "can't initialize input/output thread"
+msgstr "Невозможно инициализировать поток ввода/вывода"
+
+#: src/dcl/win32/daemon_application.cpp:121
+msgid "install Windows service"
+msgstr "установить службу Windows"
+
+#: src/dcl/win32/daemon_application.cpp:124
+msgid "uninstall Windows service"
+msgstr "удалить службу Windows"
+
+#: src/dcl/win32/daemon_application.cpp:159
+msgid "can't create a Windows registry key"
+msgstr "невозможно создать ключ реестра Windows"
+
+#: src/dcl/win32/daemon_application.cpp:166
+#: src/dcl/win32/daemon_application.cpp:174
+#: src/dcl/win32/daemon_application.cpp:180
+#: src/dcl/win32/daemon_application.cpp:187
+msgid "can't write a value into the Windows registry key"
+msgstr "невозможно записать значение в ключ реестра Windows"
+
+#: src/dcl/win32/daemon_application.cpp:191
+msgid "Windows service installed successfully."
+msgstr "Служба Windows успешно установлена."
+
+#: src/dcl/win32/daemon_application.cpp:194
+msgid "can't create Windows service"
+msgstr "невозможно создать службу Windows"
+
+#: src/dcl/win32/daemon_application.cpp:202
+msgid "can't open Windows service"
+msgstr "невозможно открыть службу Windows"
+
+#: src/dcl/win32/daemon_application.cpp:210
+msgid "Windows service uninstalled successfully."
+msgstr "Служба Windows была успешно удалена."
+
+#: src/dcl/win32/daemon_application.cpp:213
+msgid "can't delete Windows service"
+msgstr "невозможно удалить службу Windows"
+
+#: src/dcl/win32/daemon_application.cpp:258
+msgid "can't start Windows service"
+msgstr "невозможно запустить службу Windows"
+
+#: src/dcl/win32/daemon_application.cpp:271
+msgid "can't register Windows service control handler"
+msgstr "невозможно зарегистрировать обработчик управления службой Windows"
+
+#: src/dcl/win32/plugin_impl.cpp:66
+msgid "Can't load dynamic library '{0}'"
+msgstr "Невозможно загрузить динамическую библиотеку '{0}'"
+
+#: src/dcl/win32/plugin_impl.cpp:71
+msgid "void init(void*) function is not found in the library '{0}'"
+msgstr "не найдена функция void init(void*) в библиотеке '{0}'"
+
+#: src/dcl/win32/plugin_impl.cpp:77
+msgid ""
+"disposable* create_object(const char*) function is not found in the library "
+"'{0}'"
+msgstr ""
+"не найдена функция disposable* create_object(const char*) в библиотеке '{0}'"
+
+#: src/dcl/win32/plugin_impl.cpp:83
+msgid ""
+"void destroy_object(disposable*) function is not found in the library '{0}'"
+msgstr "не найдена функция void destroy_object(disposable*) в библиотеке '{0}'"
+
+#: src/dcl/win32/plugin_impl.cpp:88
+msgid "void finalize() function is not found in the library '{0}'"
+msgstr "не найдена функция void finalize() в библиотеке '{0}'"
+
+#: src/dcl/win32/process_impl.cpp:68 src/dcl/win32/process_impl.cpp:72
+#: src/dcl/win32/process_impl.cpp:76
+msgid "CreatePipe failed"
+msgstr "функция CreatePipe выполнена с ошибкой"
+
+#: src/dcl/win32/process_impl.cpp:70 src/dcl/win32/process_impl.cpp:74
+#: src/dcl/win32/process_impl.cpp:78
+msgid "SetHandleInformation failed"
+msgstr "функция SetHandleInformation выполнена с ошибкой"
+
+#: src/dcl/win32/process_impl.cpp:98
+msgid "CreateProcess failed"
+msgstr "функция CreateProcess выполнена с ошибкой"
+
+#: src/dcl/win32/process_impl.cpp:105
+msgid "WriteFile failed"
+msgstr "функция WriteFile выполнена с ошибкой"
+
+#~ msgid "can't handshake with client"
+#~ msgstr "не удалось начать сеанс связи с клиентом"
+
+#~ msgid "can't set socket to a non-blocked state"
+#~ msgstr "Невозможно перевести сокет в неблокируемое состояние"
+
+#~ msgid "timeout when reading from client"
+#~ msgstr "При чтении данных от клиента вышло время ожидания"
+
+#~ msgid "Fatal error: #{0}: {1}"
+#~ msgstr "Неустранимая ошибка: #{0}: {1}"
+
+#~ msgid "Fatal error #{0}: {1}"
+#~ msgstr "Неустранимая ошибка: #{0}: {1}"
+
+#~ msgid "The section {0} is not found in the config file"
+#~ msgstr "Секция {0} в конфигурационном файле не найдена"
+
+#~ msgid "Secure connections are not supported"
+#~ msgstr "Безопасные подключения не поддерживаются"
+
+#~ msgid "Protocol '{0}' is not supported"
+#~ msgstr "Протокол '{0}' не поддерживается"
+
+#~ msgid "Can't connect to server"
+#~ msgstr "Невозможно подключиться к серверу"
+
+#~ msgid "Can't send data to server"
+#~ msgstr "Невозможно отправить данные на сервер"
+
+#~ msgid "Can't bind socket"
+#~ msgstr "Невозможно осуществить привязку сокета"

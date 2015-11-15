@@ -1,0 +1,68 @@
+1. About DCL
+
+The dbPager Classes Library (DCL) is a C++ framework for cross-platform
+application development. DCL provides single-source portability across
+Microsoft Windows, Linux and all major Unix variants.
+
+DCL provides application developers with all the functionality needed to
+build applications with system native graphical user interface, web
+applications, server applications, database-aware applications as well
+as simple console utilities.
+
+DCL is fully object-oriented and easily extensible. It is uses some of
+modern C++ features like templates, exceptions and STL.
+
+The library is intended for the development of Free and Open Source software.
+It is provided free of charge under the terms GNU General Public License
+version 3.
+
+
+2. Documentation
+
+The documentation is built from the library header files. To do this, you
+should have the following developer tools installed:
+
+- doxygen
+- dot (optional)
+
+To build the documentation, execute the following command after configuring
+the library with 'configure' script:
+
+make doxygen-doc
+
+Configure script contains some options.
+
+After building, the documentation can be found in the 'doc' directory.
+
+
+3. Downloading and building DCL
+
+To build DCL from repository you should have the following developer tools
+installed:
+
+- svn
+- autopoint (version 0.17 or newer)
+- libtoolize (version 2.2 or newer)
+- aclocal (version 1.10 or newer)
+- automake (version 1.10 or newer)
+- autoconf (version 2.61 or newer)
+- autoheader (version 2.61 or newer)
+- xgettext (version 0.17 or newer)
+- xsltproc
+
+To download latest DCL sources, execute the following command:
+
+git clone https://github.com/wolfsoft/libdcl.git
+
+The DCL sources will downloaded into the libdcl directory. Next, you should
+run the autogen.sh script in the libdcl directory - it creates all necessary
+infrastructure for building the DCL with developer tools mentioned above.
+
+After building the infrastructure complete, you should configure the DCL
+sources by running 'configure' script. The configure script has various
+options, run it with --help parameter for details.
+
+Finally, build the configured sources with 'make' command.
+
+More information about building the sources can be found in the INSTALL file.
+

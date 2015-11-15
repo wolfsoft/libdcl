@@ -1,0 +1,119 @@
+/*!	\page quickstart Quick Start Guide
+
+	\section intro Introduction
+	
+	This guide helps you to start develop your application with DCL
+	immediately. Step by step, this guide shows you how to create
+	the real application from scratch.
+	
+	Before starting, be sure you have the following developer tools installed:
+	
+	- gcc
+	- make
+	- autotools, autoconf, automake
+	- pkg-config
+	- gettext
+	- xsltproc
+
+	The following third-party libraries are highly recommended
+	(or may be required) to be installed:
+
+	- OpenSSL or GNU TLS
+	- unixODBC or iODBC
+	- GTK2
+	- Qt4
+
+	Be sure that you have development versions of these libraries if you are
+	planning to build DCL from the source code.
+
+	This guide assumes that you are developing on the UNIX/Linux platform.
+	To develop on the Windows platform, you should install and configure
+	<a href="http://www.mingw.org">MingW and MSYS</a> building environment
+	(does not covered by this guide).
+
+	\section install Install the library
+	
+	First, you should have the DCL installed. You can install the
+	binary packages provided to your system or compile and
+	install library by yourself.
+	
+	\subsection install_binary Installing the binary packages
+
+	The binary packages of the DCL are available as DEB packages (Ubuntu,
+	Debian GNU/Linux) and RPM packages (RedHat, CentOS, OpenSuSE GNU/Linux).
+
+	You can download and install the binaries from the
+	<a href="http://sourceforge.net/project/showfiles.php?group_id=218383">SourceForge download area</a>
+	and <a href="https://edge.launchpad.net/~wolfsoft/+archive/dbpager/">
+	Launchpad repository</a>.
+
+	\subsection install_source Building and installing from sources
+
+	- Get the latest DCL sources from the
+	<a href="http://sourceforge.net/project/showfiles.php?group_id=218383">SourceForge download area</a>.
+	- Unpack the sources
+	\code
+tar -jxf libdcl-0.1.0.tar.bz2
+	\endcode
+	- Configure, make and install
+    \code
+cd libdcl-0.1.0
+./configure && make && make install
+	\endcode
+
+	After building, the library will be installed into /usr/local directory.
+
+	\section template Select the application template
+	
+	The DCL provides the following types of applications:
+	
+	- Console applications. This kind of applications provides you
+	the interaction with system console. Most of UNIX/Linux system utilities
+	are console applications.
+	- Daemon applications. These applications are running in the background
+	and act as system services.
+	- Web applications. This kind of applications is for web-based backends.
+	Most of web servers support of extention mechanism
+	by extention modules. DCL supports several types of extentions: generic
+	type (CGI application; supported by any web server),
+	IIS extention (ISAPI application; supported by Microsoft IIS),
+	Apache module (Apache application; supported by Apache HTTPD web server).
+	- Desktop applications. These applications provide the graphical user
+	interface.
+	
+	Get the appropritate application template from the 'examples/hello_world'
+	directory and copy it into your workplace.
+
+	\section customize Customize the application template
+
+	First, you will need to customize template building environment. To do
+	this, open the configure.ac file and edit it for your needs (refer to the
+	comments in this file as the documentation).
+
+	Next, start the configuration script to generate building environment:
+	\code
+sh ./autogen.sh
+	\endcode
+
+	After generating, you will have working build environment for your
+	application. You will need to configure the application for building:
+	\code
+./configure
+	\endcode
+
+	After configuring, you can build your application by simply
+	executing 'make'.
+
+	\section real_code Add the code
+
+	Go to the 'src' folder and open 'main.cpp' file. It contains the
+	'execute' method that should contain the actual code to make your
+	application doing something useful (i.e. it's the entry point).
+
+	\section next_steps Future changes
+
+	Add your .cpp modules and register these into Makefile.am files;
+	extend your application functionality with help of DCL classes
+	as much as you need; translate text resources in the 'po' directory
+	to a different languages; build and deploy!
+*/

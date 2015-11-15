@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+
+<?xml-stylesheet type="text/xsl" href="manpage.xsl"?>
+
+<manpage section="3">
+
+<package>DCL (dbPager Classes Library)</package>
+
+<name>libdclbase</name>
+
+<summary>
+a C++ framework for cross-platform application development.
+</summary>
+
+<date>2008-12-28</date>
+
+<author>
+	<name>Dennis Prochko</name>
+	<email>wolfsoft@mail.ru</email>
+</author>
+
+<sections>
+
+<description>
+<p>The dbPager Classes Library (DCL) is a C++ framework for cross-platform
+application development. DCL provides single-source portability across
+Microsoft Windows, Linux and all major Unix variants.</p>
+
+<p>DCL provides application developers with all the functionality needed to
+build applications with system native graphical user interface, web
+applications as well as simple console utilites. DCL is fully
+object-oriented and easily extensible. It uses some of modern C++
+features like templates, exceptions and STL.</p>
+
+<p>DCL is splitted into several libraries to provide flexible linking with
+your applications: <b>libdclbase</b>, <b>libdclnet</b> and <b>libdclodbc</b>.</p>
+</description>
+
+<files>
+<p><b>/usr/lib/libdclbase.a</b> the static library</p>
+<p><b>/usr/lib/libdclbase.so</b> the shared library</p>
+<p><b>/usr/include/libdcl/dclbase.h</b> the main include file</p>
+</files>
+
+<see-also>
+libdclnet(3) libdclodbc(3)
+</see-also>
+
+<other name="copyright">
+<p>Copyright (c) 2008 Dennis Prochko &lt;wolfsoft@mail.ru&gt;.</p>
+<p>dbPager Classes Library (DCL) is free software; you can redistribute it
+and/or modify it under the terms of the GNU General Public License as
+published by the Free Software Foundation version 3.</p>
+</other>
+
+</sections>
+
+</manpage>
+

@@ -1,0 +1,72 @@
+/*
+ * libdclodbc.rc
+ * This file is part of dbPager Classes Library (DCL)
+ *
+ * Copyright (c) 2008 Dennis Prochko <wolfsoft@mail.ru>
+ *
+ * DCL is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation version 3.
+ *
+ * DCL is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with DCL; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin St, Fifth Floor,
+ * Boston, MA  02110-1301  USA
+ */
+
+#include <afxres.h>
+
+#define VER_FILEVERSION             @ABI_CUR@,@ABI_REV@,@ABI_AGE@,0
+#define VER_FILEVERSION_STR         "@ABI_CUR@.@ABI_REV@.@ABI_AGE@.0\0"
+
+#define VER_PRODUCTVERSION          @VERSION_MAJOR@,@VERSION_MINOR@,@VERSION_REVISION@,0
+#define VER_PRODUCTVERSION_STR      "@VERSION_MAJOR@.@VERSION_MINOR@.@VERSION_REVISION@.0\0"
+
+#ifndef DEBUG
+#define VER_DEBUG                   0
+#else
+#define VER_DEBUG                   VS_FF_DEBUG
+#endif
+
+VS_VERSION_INFO VERSIONINFO
+FILEVERSION    	VER_FILEVERSION
+PRODUCTVERSION 	VER_PRODUCTVERSION
+FILEFLAGSMASK  	VS_FFI_FILEFLAGSMASK
+FILEFLAGS      	0
+FILEOS         	VOS_NT
+FILETYPE       	VFT_DLL
+FILESUBTYPE    	VFT2_UNKNOWN
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904E4"
+        BEGIN
+            VALUE "CompanyName",      "Dennis Prochko"
+            VALUE "FileDescription",  "dbPager Classes Library (odbc)"
+            VALUE "FileVersion",      VER_FILEVERSION_STR
+            VALUE "InternalName",     "DCL"
+            VALUE "LegalCopyright",   "Copyright (c) 2008 Dennis Prochko <wolfsoft@mail.ru>"
+            VALUE "OriginalFilename", "libdclodbc.dll"
+            VALUE "ProductName",      "dbPager Classes Library (DCL)"
+            VALUE "ProductVersion",   VER_PRODUCTVERSION_STR
+            VALUE "Comments",         "DCL is free software; you can redistribute it and/or modify "
+                                      "it under the terms of the GNU General Public License as published by "
+                                      "the Free Software Foundation version 3. "
+                                      " "
+                                      "DCL is distributed in the hope that it will be useful, "
+                                      "but WITHOUT ANY WARRANTY; without even the implied warranty of "
+                                      "MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the "
+                                      "GNU General Public License for more details. "
+                                      " "
+                                      "You should have received a copy of the GNU General Public License "
+                                      "along with DCL; if not, write to the Free Software "
+                                      "Foundation, Inc., 51 Franklin St, Fifth Floor, "
+                                      "Boston, MA  02110-1301  USA"
+        END
+    END
+END

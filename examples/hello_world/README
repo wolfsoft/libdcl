@@ -1,0 +1,12 @@
+This demo is demonstrating the skeletons of all DCL application types to
+provide a classical "Hello, world!" greeting.
+
+console_application prints "Hello, world!" on terminal screen and exists. Try
+to play with default command line options (see console_application -h).
+
+daemon_application runs in a background process. Under Microsoft Windows it
+required to be installed as Windows Service (see daemon_application -h). This
+program writes "Hello, world!" in system log every 10 seconds.
+
+gui_application shows standard dialog window with "Hello, world".
+

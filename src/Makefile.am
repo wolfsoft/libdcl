@@ -1,0 +1,1 @@
+SUBDIRS = dcl dcl-gtk

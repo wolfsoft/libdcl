@@ -1,0 +1,5 @@
+# Define a C macro LOCALEDIR indicating where catalogs will be installed.
+DEFS += -DLOCALEDIR=\"$(localedir)\" -DSYSCONFDIR=\"$(sysconfdir)\"  -DDATAROOTDIR=\"$(datarootdir)\"
+
+# Let's compiler to be more restrictive
+AM_CXXFLAGS = -I. -I$(srcdir) -I$(top_srcdir)/include -I$(top_srcdir)/intl -shared-libgcc -Wl,--allow-shlib-undefined -W -Wall -Wno-unused

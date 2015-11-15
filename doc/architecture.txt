@@ -1,0 +1,5 @@
+/*!	\page architecture Library architecture
+
+	\section intro Introduction
+	
+*/

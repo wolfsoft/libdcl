@@ -1,0 +1,95 @@
+Source: libdcl
+Maintainer: Dennis Prochko <wolfsoft@mail.ru>
+Section: devel
+Priority: optional
+Build-Depends: debhelper (>= 6), autotools-dev, libssl-dev, xsltproc, doxygen, graphviz,
+ libgtk2.0-dev, libqt4-dev, libapr1-dev, apache2-threaded-dev | apache2-prefork-dev,
+ unixodbc-dev | libiodbc2-dev
+Standards-Version: 3.9.5
+Homepage: http://dbpager.com/dcl
+
+Package: libdcl-dev
+Architecture: any
+Section: libdevel
+Depends: libdclbase1 (= ${binary:Version}), libdclnet1 (= ${binary:Version}),
+ libdclodbc1 (= ${binary:Version}), ${misc:Depends}
+Recommends: apache2-threaded-dev
+Description: C++ framework for cross-platform application development
+ The dbPager Classes Library (DCL) is a C++ framework for cross-platform
+ application development.
+ DCL provides single-source portability across Microsoft Windows, Linux and all
+ major Unix variants.
+ .
+ This is a development files and the documentation of the library needed by
+ software developer who wants to use the library in own software.
+
+Package: libdclbase1
+Section: libs
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Suggests: libdclgtk1 (= ${binary:Version})
+Conflicts: libdclbase
+Replaces: libdclbase
+Description: C++ framework for cross-platform application development
+ The dbPager Classes Library (DCL) is a C++ framework for cross-platform
+ application development.
+ DCL provides single-source portability across Microsoft Windows, Linux and all
+ major Unix variants.
+ .
+ This is core of the library. The most frequent library classes are here.
+
+Package: libdclgtk1
+Section: libs
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Conflicts: libdclgtk
+Replaces: libdclgtk
+Description: C++ framework for cross-platform application development
+ The dbPager Classes Library (DCL) is a C++ framework for cross-platform
+ application development.
+ DCL provides single-source portability across Microsoft Windows, Linux and all
+ major Unix variants.
+ .
+ This is a library GUI GTK+ backend.
+
+Package: libdclnet1
+Section: libs
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Conflicts: libdclnet
+Replaces: libdclnet
+Description: C++ framework for cross-platform application development
+ The dbPager Classes Library (DCL) is a C++ framework for cross-platform
+ application development.
+ DCL provides single-source portability across Microsoft Windows, Linux and all
+ major Unix variants.
+ .
+ This is a network library.
+
+Package: libdclodbc1
+Section: libs
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Conflicts: libdclodbc
+Replaces: libdclodbc
+Description: C++ framework for cross-platform application development
+ The dbPager Classes Library (DCL) is a C++ framework for cross-platform
+ application development.
+ DCL provides single-source portability across Microsoft Windows, Linux and all
+ major Unix variants.
+ .
+ This is a database (ODBC) library.
+
+Package: libdcl-dbg
+Architecture: any
+Section: debug
+Priority: extra
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: C++ framework for cross-platform application development
+ The dbPager Classes Library (DCL) is a C++ framework for cross-platform
+ application development.
+ DCL provides single-source portability across Microsoft Windows, Linux and all
+ major Unix variants.
+ .
+ This is a debugging symbols for libdcl.
+

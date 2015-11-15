@@ -1,0 +1,10 @@
+This demo is an implementation of a simple web server. It starts to listen of
+http requests on local loopback interface (127.0.0.1), port 8000 and
+has ability to deliver content from a www directory. It supports SSL on 8443
+port.
+
+It works as system daemon (or windows service) in a background. Start it
+with "--help" parameter from a command line to see all program options.
+
+Point your web browser to http://127.0.0.1:8000/ or https://127.0.0.1:8443/
+and play with this demo.

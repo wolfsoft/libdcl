@@ -1,0 +1,66 @@
+/*!	\mainpage dbPager Classes Library Documentation
+
+	\authors Dennis Prochko <wolfsoft@mail.ru>
+
+	\section intro Introduction
+	The dbPager Classes Library (DCL) is a C++ framework for cross-platform
+	application development. DCL provides single-source portability across
+	Microsoft Windows, Linux and all major Unix variants.
+
+	DCL provides application developers with all the functionality needed to
+	build applications with system native graphical user interface
+	(desktop applications), server applications, web applications as well as
+	simple console utilites. DCL is fully object-oriented and easily
+	extensible. It is uses some of modern C++ features like templates,
+	exceptions and STL.
+
+    DCL is intended for the development of Free and Open Source software.
+    It is provided free of charge under the terms GNU General Public License
+    version 3.
+
+	\section getting_started Getting Started
+	To deep in the library, read <a href="pages.html">the basics</a>,
+	<a href="quickstart.html">quick start guide</a>, use the library source
+	code, <a href="annotated.html">classes reference</a> and the
+	examples bundled in the library source package.
+	
+	The documentation can be downloaded to read offline.
+	
+	Also you can look on the code of DCL-based open source applications, such as
+	<a href="http://dbpager.com">dbPager Server</a>.
+
+	\section download Download
+	You can download latest DCL sources from the project
+	<a href="http://sourceforge.net/project/showfiles.php?group_id=218383">
+	sourceforge download area</a>. DCL project has subversion repository (svn)
+	also, <a href="http://sourceforge.net/svn/?group_id=218383">so you can
+	download</a> a development library snapshot.
+
+	The library binaries are available as Debian(Ubuntu) GNU/Linux packages
+	and as RPM packages.
+	There is the online packages repository for Debian(Ubuntu) at
+	<a href="https://edge.launchpad.net/~wolfsoft/+archive/dbpager/">
+	Launchpad web site</a>.	The online repository for RPM-based
+	Linux distros (RedHat, CentOS, Fedora, OpenSuse, etc.) is available
+	at <a href="http://download.opensuse.org/repositories/home:/dennis_pro/">
+	OpenSuse.org web site</a>.
+
+	The library documentation can be downloaded in the various formats:
+	<a href="http://sourceforge.net/projects/libdcl/files/libdcl/libdcl-doc.tar.bz2/download">
+	HTML, in one .tar.bz2 archive</a>,
+	<a href="http://sourceforge.net/projects/libdcl/files/libdcl/libdcl-doc.pdf/download">
+	PDF</a>, and
+	<a href="http://sourceforge.net/projects/libdcl/files/libdcl/libdcl-doc.ps/download">
+	PostScript</a> format.
+
+    \section support Support
+    You can obtain the support via
+    <a href="http://sourceforge.net/mail/?group_id=218383">mailing lists</a>,
+    <a href="http://sourceforge.net/apps/phpbb/libdcl/">forum</a>,
+    <a href="http://sourceforge.net/apps/trac/libdcl/">bug tracker</a>
+    or direct emailing to the authors.
+    
+    If you want to report about a bug, patch or feature request &mdash; feel free
+    to create <a href="http://sourceforge.net/apps/trac/libdcl/newticket">the
+    ticket</a> in the project bug tracking system.
+*/

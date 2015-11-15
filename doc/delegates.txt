@@ -1,0 +1,104 @@
+/*!	\page delegates Event-driven programming paradigm
+
+	\section intro Introduction
+
+	The DCL intensively uses the
+	<a href="http://en.wikipedia.org/wiki/Event-driven_programming">event-driven
+	programming paradigm</a>. To provide the framework for event-driven model,
+	the <a href="http://en.wikipedia.org/wiki/Delegation_(programming)">delegate
+	idiom</a> is used.
+	
+	The implemented delegation idiom is simple. Most of DCL classes can
+	generate some of state changing events. If the any other class subscribes
+	on these events, the DCL class will notify that class when an event raised.
+	
+	Thus, the delegation idiom is a simple callback of the user code
+	from the DCL framework. You need not to inherit in the most cases;
+	instead, you should create the instance of the DCL class and assign
+	event handlers required.
+
+	\section handlers Event handlers
+	
+	To declare the event handler within your code, you should declare the
+	function with signature, appropriate to the event handler type.
+	Each event handler has a type, declared by typedef in the DCL class as
+	follows:
+
+	\code
+typedef dbp::delegateN<arg_type1, ..., arg_typeN, return_type> handler_type;
+	\endcode
+	
+	The N is a number of arguments the function should contain. Argument
+	types are the template parameters; the last argument is the
+	function return type. So, for the event handler with this declaration:
+
+	\code
+typedef delegate1<const http_request&, http_response> on_request_handler;
+	\endcode
+
+	your function should be declared like follows:
+
+	\code
+class test {
+  ...
+  http_response my_event_handler(const http_request &req);
+}
+	\endcode
+	
+	\section register_handler Registering event handler
+
+	To register your event handler, use create_delegate() function to
+	construct delegate, than pass the delegate to the event registering
+	function of the DCL class instance, for example:
+
+	\code
+obj.on_request(create_delegate(this, &test::my_event_handler));
+	\endcode
+
+	create_delegate() call creates the delegate object from the object instance
+	(this) and the pointer to your event handler member function.
+
+	\section example Getting all together
+	
+	Here it is the working example of using delegates:
+
+	\code
+#include <iostream>
+#include <string>
+#include <dcl/dclbase.h>
+
+// use the DCL default namespace by default
+using namespace dbp;
+
+// declare our own application class
+class hello_world_app {
+public:
+	// the constructor of the hello_world_app class initializes the
+	// console application.
+	hello_world_app(): app(application::instance()) {
+		// register the on_execute event handler
+		app.on_execute(create_delegate(this, &hello_world_app::on_execute));
+	}
+	// the reference to the console application class
+	application &app;
+private:
+	// execute event handler declaration
+	int on_execute() {
+		std::cout << _("Hello, world!") << std::endl;
+		return 0;
+	}
+};
+
+// initialize and run the application via provided macros
+IMPLEMENT_APP(hello_world_app().app);
+	\endcode
+	
+	In the example above, user class (hello_world_app) initializes the
+	dbp::application class instance and calls on_execute() function
+	to register own event handler. The own event handler is declared as
+	'int on_execute()'. When the application will ready to execute main
+	application function, on_execute() will be called from the internals
+	of the framework.
+
+	More examples of using the library are in the examples directory.
+*/
