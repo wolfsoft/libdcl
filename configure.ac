@@ -173,52 +173,6 @@ fi
 
 AM_CONDITIONAL(HAVE_WINDOWS_SYSTEM, test "$have_windows_system" = yes)
 
-# check for GTK libraries
-AC_ARG_ENABLE(gtk,
-	AS_HELP_STRING([--enable-gtk],[build GTK GUI backend (default=detect)]),
-	[use_gtk=$enableval],
-	[use_gtk=auto]
-)
-
-if test "$use_gtk" != "no"; then
-
-PKG_CHECK_MODULES(GTK, [glib-2.0 >= 2.6.0 gtk+-2.0 >= 2.6.0 gthread-2.0 pango],
-	[use_gtk=yes],
-	[
-		if test "$use_gtk" = "yes"; then
-			AC_MSG_ERROR([Cannot find GTK2 libraries version 2.6 or later])
-		fi
-		use_gtk=no;
-	]
-)
-
-fi
-
-AM_CONDITIONAL(WITH_GTK, test "$use_gtk" = "yes")
-
-# check for QT libraries
-AC_ARG_ENABLE(qt,
-	AS_HELP_STRING([--enable-qt],[build QT GUI backend (default=detect)]),
-	[use_qt=$enableval],
-	[use_qt=auto]
-)
-
-if test "$use_qt" != "no"; then
-
-PKG_CHECK_MODULES(QT, [qt-mt >= 4.1.0],
-	[use_qt=yes],
-	[
-		if test "$use_qt" = "yes"; then
-			AC_MSG_ERROR([Cannot find QT4 library version 4.1 or later])
-		fi
-		use_qt=no;
-	]
-)
-
-fi
-
-AM_CONDITIONAL(WITH_QT, test "$use_qt" = "yes")
-
 # check for WinAPI libraries
 AC_ARG_ENABLE(winapi,
 	AS_HELP_STRING([--enable-winapi], [build Win32 GUI backend (default=detect)]),
@@ -346,6 +300,52 @@ if test "$ssl_ok" = "no"; then
 fi
 
 AM_CONDITIONAL(HAVE_GNUTLS, test "$use_gnutls" = "yes")
+
+# check for GTK libraries
+AC_ARG_ENABLE(gtk,
+	AS_HELP_STRING([--enable-gtk],[build GTK GUI backend (default=detect)]),
+	[use_gtk=$enableval],
+	[use_gtk=auto]
+)
+
+if test "$use_gtk" != "no"; then
+
+PKG_CHECK_MODULES(GTK, [glib-2.0 >= 2.6.0 gtk+-2.0 >= 2.6.0 gthread-2.0 pango],
+	[use_gtk=yes],
+	[
+		if test "$use_gtk" = "yes"; then
+			AC_MSG_ERROR([Cannot find GTK2 libraries version 2.6 or later])
+		fi
+		use_gtk=no;
+	]
+)
+
+fi
+
+AM_CONDITIONAL(WITH_GTK, test "$use_gtk" = "yes")
+
+# check for QT libraries
+AC_ARG_ENABLE(qt,
+	AS_HELP_STRING([--enable-qt],[build QT GUI backend (default=detect)]),
+	[use_qt=$enableval],
+	[use_qt=auto]
+)
+
+if test "$use_qt" != "no"; then
+
+PKG_CHECK_MODULES(QT, [qt-mt >= 4.1.0],
+	[use_qt=yes],
+	[
+		if test "$use_qt" = "yes"; then
+			AC_MSG_ERROR([Cannot find QT4 library version 4.1 or later])
+		fi
+		use_qt=no;
+	]
+)
+
+fi
+
+AM_CONDITIONAL(WITH_QT, test "$use_qt" = "yes")
 
 # generate makefiles
 AC_CONFIG_FILES([
