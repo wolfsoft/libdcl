@@ -238,7 +238,7 @@ ostream& operator<<(ostream &out, const http_response &h) {
 
 // http_cookie
 
-http_cookie::http_cookie(const std::string &cookie): secure(false) {
+http_cookie::http_cookie(const std::string &cookie): secure(false), http_only(false) {
 	strings fields = tokenize()(cookie, ";");
 	for (strings::const_iterator i = fields.begin(); i != fields.end(); ++i) {
 		string p, v;
@@ -252,9 +252,6 @@ http_cookie::http_cookie(const std::string &cookie): secure(false) {
 		if (p == string("expires"))
 			expires = v;
 		else
-		if (p == string("comment"))
-			comment = v;
-		else
 		if (p == string("domain"))
 			domain = v;
 		else
@@ -263,6 +260,9 @@ http_cookie::http_cookie(const std::string &cookie): secure(false) {
 		else
 		if (p == string("secure"))
 			secure = true;
+		else
+		if (p == string("HttpOnly"))
+			http_only = true;
 		else {
 			name = p;
 			value = v;
@@ -276,14 +276,14 @@ std::string http_cookie::str() const {
 		s += name + "=" + value;
 		if (expires)
 			s += "; expires=" + expires.as_gmt();
-		if (!comment.empty())
-			s += "; comment=" + comment;
 		if (!domain.empty())
 			s += "; domain=" + domain;
 		if (!path.empty())
 			s += "; path=" + path;
 		if (secure)
 			s += "; secure";
+		if (http_only)
+			s += "; HttpOnly";
 	}
 	return s;
 }

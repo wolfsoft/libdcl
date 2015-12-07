@@ -130,9 +130,9 @@ namespace http_method {
 class http_cookie {
 public:
 	bool secure;
+	bool http_only;
 	std::string name;
 	std::string value;
-	std::string comment;
 	std::string domain;
 	datetime expires;
 	std::string path;
@@ -438,7 +438,7 @@ class http_response: public http_header {
 public:
 	http_response() {
 		set_status(http_error::ok);
-		set_content_type("text/plain");
+		set_content_type("text/plain; charset=utf-8");
 	};
 	http_method::http_method get_allow();
 	void set_allow(http_method::http_method method);
