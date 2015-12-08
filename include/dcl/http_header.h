@@ -137,10 +137,10 @@ public:
 	datetime expires;
 	std::string path;
 	//! Constructor
-	http_cookie(): secure(false) { };
+	http_cookie(): secure(false), http_only(false) { };
 	//! Constructor
 	http_cookie(const std::string &name, const std::string &value):
-	  secure(false), name(name), value(value) { };
+	  secure(false), http_only(false), name(name), value(value) { };
 	//! Constructor
 	/*!
 		Parse the string containing cookie.
