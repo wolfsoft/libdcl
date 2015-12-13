@@ -98,6 +98,9 @@ http_request apache_application::get_request(local::apache_helper *apache,
 	req.set_remote_addr(to_string<const char*>(apache_req->connection->remote_ip));
 #endif
 	req.set_gateway_interface("CGI/1.1");
+	//TODO find more clear way to detect SSL
+	req.set_https(apache_req->server->port == 443);
+
 	// read request body
 	size_t len = 0;
 	char *buffer = NULL;

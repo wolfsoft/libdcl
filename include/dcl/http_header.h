@@ -410,6 +410,12 @@ public:
 	void set_host(const std::string &value) {
 		headers["Host"] = value;
 	}
+	void set_https(bool use_https) {
+		_https = use_https;
+	}
+	bool get_https() const {
+		return _https;
+	}
 private:
 	std::string _auth_type;
 	std::string _gateway_interface;
@@ -426,6 +432,7 @@ private:
 	std::string _server_protocol;
 	http_method::http_method _method;
 	std::string _server_software;
+	bool _https;
 };
 
 //!	HTTP response
