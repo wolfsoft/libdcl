@@ -45,6 +45,13 @@ public:
 		url u6 = "file://www.test.com/~path/";
 		if (!do_test((u6.host == "www.test.com" && u6.path == "/~path/"),
 		  "file schema failed " + u6.str())) return -1;
+
+		{
+			url test_url = "https://google.com";
+			if (!do_test((test_url.str() == "https://google.com/"),
+			  "no root path test failed " + test_url.str())) return -1;
+			
+		}
 		return 0;
 	}
 	application &app;

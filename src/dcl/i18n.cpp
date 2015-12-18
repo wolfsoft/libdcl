@@ -26,8 +26,6 @@
 #include "gettext.h"
 #endif
 
-#include <locale.h>
-
 namespace dbp {
 
 using namespace std;
@@ -59,13 +57,23 @@ std::string i18n::translate(const std::string &catalog,
 #endif
 }
 
-void i18n::locale(const std::string &name) {
+locale_t i18n::locale(const std::string &name) {
 #ifdef _WIN32
 #else
-	locale_t loc;
+	locale_t loc, old_loc;
 	loc = newlocale(LC_ALL_MASK, name.c_str(), NULL);
-	uselocale(loc);
+	old_loc = uselocale(loc);
 	freelocale(loc);
+	return old_loc;
+#endif
+}
+
+locale_t i18n::locale(locale_t &loc) {
+#ifdef _WIN32
+#else
+	locale_t old_loc = uselocale(loc);
+	freelocale(loc);
+	return old_loc;
 #endif
 }
 

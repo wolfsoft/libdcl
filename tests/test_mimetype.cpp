@@ -13,7 +13,7 @@ public:
 	};
 	int on_execute() {
 		mimetype mime;
-		return (mime("./test_mimetype.cpp") == "text/x-c++src") ? 0 : -1;
+		return (mime("./test.conf") == "text/plain") ? 0 : -1;
 	};
 	// the reference to the console application class
 	application &app;

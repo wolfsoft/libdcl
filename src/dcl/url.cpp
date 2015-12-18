@@ -86,6 +86,7 @@ void url::parse(const string &value) {
 		// search for ip_server
 		if ((pos = t.find('/')) == string::npos) {
 			host = t;
+			t.clear();
 		} else {
 			host = t.substr(0, pos);
 			t.erase(0, pos);
@@ -281,6 +282,9 @@ std::string url::str() const {
 		}
 	}
 	rslt += get_full_path();
+	if (rslt.empty()) {
+		rslt += "/";
+	}
 	return rslt;
 }
 

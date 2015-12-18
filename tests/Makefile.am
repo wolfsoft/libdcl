@@ -61,7 +61,7 @@ test_factory_LDADD = @top_builddir@/src/dcl/libdclbase.la
 test_url_SOURCES = test_url.cpp
 test_url_LDADD = @top_builddir@/src/dcl/libdclbase.la
 
-test_mimetype_SOURCES = test_url.cpp
+test_mimetype_SOURCES = test_mimetype.cpp
 test_mimetype_LDADD = @top_builddir@/src/dcl/libdclbase.la
 
 test_uuid_SOURCES = test_uuid.cpp

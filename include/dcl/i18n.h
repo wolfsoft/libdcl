@@ -28,6 +28,8 @@
 #include "config.h"
 #endif
 
+#include <locale.h>
+
 namespace dbp {
 
 //!	Shortcut for i18n::translate()
@@ -68,7 +70,8 @@ public:
 	//! Set the locale for the current thread
 	/*!
 	*/
-	static void locale(const std::string &name);
+	static locale_t locale(const std::string &name);
+	static locale_t locale(locale_t &loc);
 	//! Retrieve the current locale
 	/*!
 	*/
