@@ -136,9 +136,14 @@ std::string datetime::str(const std::string &format) const {
 std::string datetime::as_gmt() const {
 	struct tm *tm = gmtime(&_t);
 	char buffer[128];
-	setlocale(LC_ALL, "C");
+	locale_t loc, old_loc;
+	
+	loc = newlocale(LC_ALL_MASK, "C", NULL);
+	old_loc = uselocale(loc);
+	freelocale(loc);
 	strftime(buffer, 128, "%a, %d %b %Y %H:%M:%S GMT", tm);
-	setlocale(LC_ALL, "");
+	uselocale(old_loc);
+
 	return std::string(buffer);
 }
 	
