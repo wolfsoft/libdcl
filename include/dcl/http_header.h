@@ -312,6 +312,7 @@ class http_request: public http_header {
 	friend std::istream& operator>>(std::istream&, http_header&);
 	friend std::ostream& operator<<(std::ostream&, const http_request&);
 public:
+	http_request(): http_header(), _server_port(0), _https(false)  { }
 	const std::string& get_auth_type() const {
 		return _auth_type;
 	};
