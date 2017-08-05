@@ -35,7 +35,7 @@ namespace http_error {
 class convert {
 public:
 	std::string operator()(http_error value) {
-		typedef pair<http_error::http_error, const char*> status_map;
+		typedef pair<http_error, const char*> status_map;
 		status_map const table[] = {
 			status_map(http_error::error_continue, "Continue"),
 			status_map(http_error::switching_protocols, "Switching Protocols"),
@@ -85,7 +85,7 @@ public:
 			status_map(http_error::http_version_not_supported,
 			  "HTTP Version Not Supported")
 		};
-		map<http_error::http_error, const char*> _map(table,
+		map<http_error, const char*> _map(table,
 		  table + sizeof(table) / sizeof(table[0]));
 		return _map[value];
 	}
@@ -100,7 +100,7 @@ namespace http_method {
 class convert {
 public:
 	http_method operator()(const std::string &value) const {
-		typedef pair<std::string, http_method::http_method> status_map;
+		typedef pair<std::string, http_method> status_map;
 		status_map const table[] = {
 			status_map("GET", http_method::get),
 			status_map("PUT", http_method::put),
@@ -130,7 +130,7 @@ public:
 			status_map("MERGE", http_method::merge),
 			status_map("HEAD", http_method::head)
 		};
-		map<std::string, http_method::http_method> _map(table,
+		map<std::string, http_method> _map(table,
 		  table + sizeof(table) / sizeof(table[0]));
 		if (_map.find(value) != _map.end())
 			return _map[value];
@@ -138,7 +138,7 @@ public:
 			return http_method::unknown;
 	};
 	std::string operator()(const http_method value) const {
-	typedef pair<http_method::http_method, const char*> status_map;
+	typedef pair<http_method, const char*> status_map;
 		status_map const table[] = {
 			status_map(http_method::get, "GET"),
 			status_map(http_method::put, "PUT"),
@@ -168,7 +168,7 @@ public:
 			status_map(http_method::merge, "MERGE"),
 			status_map(http_method::head, "HEAD")
 		};
-		map<http_method::http_method, const char*> _map(table,
+		map<http_method, const char*> _map(table,
 		  table + sizeof(table) / sizeof(table[0]));
 		if (value == http_method::unknown)
 			return "";
@@ -372,7 +372,7 @@ void http_header::set_cookies(const http_cookies &c) {
 
 void http_header::set_cookie(const http_cookie &c) {
 	cookies.clear();
-	cookies.push_back(c);	
+	cookies.push_back(c);
 }
 
 void http_header::add_cookie(const http_cookie &c) {
