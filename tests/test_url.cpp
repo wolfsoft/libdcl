@@ -13,6 +13,10 @@ public:
 		app.on_execute(create_delegate(this, &test::on_execute));
 	}
 	int on_execute() {
+		{
+			url u("http://clickhouse:8123/?database=bg");
+			if (!do_test(u.str() == string("http://clickhouse:8123/?database=bg"), "localhost failed, " + u.str())) return -1;
+		}
 		url u1 = "http://www.test.com:8080/~path/script?param=value#here";
 		url u2("http://www.test.com/~path/?param=value2");
 		if (!do_test((u1.scheme == u2.scheme), "scheme failed")) return -1;
@@ -50,7 +54,7 @@ public:
 			url test_url = "https://google.com";
 			if (!do_test((test_url.str() == "https://google.com/"),
 			  "no root path test failed " + test_url.str())) return -1;
-			
+
 		}
 		return 0;
 	}
