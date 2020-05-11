@@ -69,7 +69,7 @@ vector<string> tokenize::operator()(const string &source, const char *delims) {
 void tokenize::operator()(const std::string &source, std::string &left,
   std::string &right, const char *delims) {
 	if (!source.empty()) {
-		string::size_type pos = source.find_last_of(delims);
+		string::size_type pos = source.find_first_of(delims);
 		if (pos == string::npos) {
 			left = "";
 			right = source;
