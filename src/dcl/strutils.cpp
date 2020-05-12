@@ -67,15 +67,25 @@ vector<string> tokenize::operator()(const string &source, const char *delims) {
 }
 
 void tokenize::operator()(const std::string &source, std::string &left,
-  std::string &right, const char *delims) {
+  std::string &right, bool greedy, const char *delims) {
 	if (!source.empty()) {
-		string::size_type pos = source.find_first_of(delims);
-		if (pos == string::npos) {
-			left = "";
-			right = source;
+		if (greedy) {
+			string::size_type pos = source.find_last_of(delims);
+			if (pos == string::npos) {
+				left = "";
+				right = source;
+			} else {
+				left = source.substr(0, pos);
+				right = source.substr(pos + 1, source.length() - pos - 1);
+			}
 		} else {
-			left = source.substr(0, pos);
-			right = source.substr(pos + 1, source.length() - pos - 1);
+			string::size_type pos = source.find_first_of(delims);
+			if (pos == string::npos) {
+				left = source;
+			} else {
+				left = source.substr(0, pos);
+				right = source.substr(pos + 1, source.length() - pos - 1);
+			}
 		}
 	}
 }

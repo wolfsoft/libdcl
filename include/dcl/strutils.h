@@ -43,7 +43,7 @@ const std::string nullstr;
 /*!
 	The trim class is a functor is used for trimming of trailing
 	non-characters symbols (spaces, tabs and CRLFs) from a given string.
-	
+
 	Example:
 	\code
 string s = dbp:trim()(" Test string\n");
@@ -137,7 +137,8 @@ public:
 	//!	Split a string to a token pair
 	/*!
 		Delimiting characters are searching from the end of the string to the
-		beginning. If one is found, string is splitting into pair of a tokens.
+		beginning when greedy = true, or from the beginning of the string
+		otherwise. If one is found, string is splitting into pair of a tokens.
 
 		\param source a source string
 		\param left (out) the first element of tokens pair
@@ -145,7 +146,7 @@ public:
 		\param delims an optional delimiting characters
 	*/
 	void operator()(const std::string &source, std::string &left,
-	  std::string &right, const char *delims = "/\\");
+	  std::string &right, bool greedy = true, const char *delims = "/\\");
 };
 
 //!	String format
