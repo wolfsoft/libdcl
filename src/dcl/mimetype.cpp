@@ -76,7 +76,7 @@ void mimetype::register_type(const std::string &ext,
 const std::string& mimetype::operator()(const std::string& filename) const {
 	// split filename into the name and extension
 	string name, ext;
-	tokenize()(filename, name, ext, ".");
+	tokenize()(filename, name, ext, true, ".");
 	// find the MIME type in the database
 	mime_types::const_iterator it = mime.find(ext);
 	if (it != mime.end())

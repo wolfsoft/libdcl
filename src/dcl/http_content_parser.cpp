@@ -72,7 +72,7 @@ public:
 			  i != pairs.end(); ++i) {
 				// split each token to name and value
 				string param, value;
-				tokenize()(*i, param, value, "=");
+				tokenize()(*i, param, value, false, "=");
 				// decode urlencoded value
 				element.name = url().decode(param);
 				element.value = url().decode(value);
@@ -107,11 +107,7 @@ public:
 	http_parser* create_parser() {
 		// parse content type
 		string ct, cv;
-		tokenize()(header.get_content_type(), ct, cv, ";");
-		if (ct.empty()) {
-			ct = cv;
-			cv.clear();
-		}
+		tokenize()(header.get_content_type(), ct, cv, false, ";");
 		ct = trim()(ct);
 		cv = trim()(cv);
 		// create concrete parser

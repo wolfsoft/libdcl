@@ -242,11 +242,7 @@ http_cookie::http_cookie(const std::string &cookie): secure(false), http_only(fa
 	strings fields = tokenize()(cookie, ";");
 	for (strings::const_iterator i = fields.begin(); i != fields.end(); ++i) {
 		string p, v;
-		tokenize()(*i, p, v, "=");
-		if (p.empty()) {
-			p = v;
-			v.clear();
-		}
+		tokenize()(*i, p, v, false, "=");
 		p = trim()(p);
 		v = trim()(v);
 		if (p == string("expires"))
