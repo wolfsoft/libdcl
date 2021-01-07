@@ -33,7 +33,6 @@ using namespace std;
 datetime::datetime(const std::string &src, const std::string &fmt): _t(0) {
 	struct tm tm;
 	strptime(src.c_str(), fmt.c_str(), &tm);
-	tm.tm_isdst = 1;
 	_t = mktime(&tm);
 }
 
@@ -137,7 +136,7 @@ std::string datetime::as_gmt() const {
 	struct tm *tm = gmtime(&_t);
 	char buffer[128];
 	locale_t loc, old_loc;
-	
+
 	loc = newlocale(LC_ALL_MASK, "C", NULL);
 	old_loc = uselocale(loc);
 	freelocale(loc);
@@ -146,6 +145,5 @@ std::string datetime::as_gmt() const {
 
 	return std::string(buffer);
 }
-	
-} // namespace
 
+} // namespace

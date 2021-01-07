@@ -44,8 +44,6 @@ namespace codec {
 
 using namespace std;
 
-const int linesize = 72;
-
 /*
 ** Translation Table as described in RFC1113
 */
@@ -75,7 +73,7 @@ void encodeblock( unsigned char in[3], unsigned char out[4], int len )
 ** decode 4 '6-bit' characters into 3 8-bit binary bytes
 */
 void decodeblock( unsigned char in[4], unsigned char out[3] )
-{   
+{
 	out[ 0 ] = (unsigned char ) (in[0] << 2 | in[1] >> 4);
 	out[ 1 ] = (unsigned char ) (in[1] << 4 | in[2] >> 2);
 	out[ 2 ] = (unsigned char ) (((in[2] << 6) & 0xc0) | in[3]);
@@ -83,7 +81,7 @@ void decodeblock( unsigned char in[4], unsigned char out[3] )
 
 void codec_base64::encode(istream &in, ostream &out) {
 	unsigned char _in[3], _out[4];
-	int i, len, blocksout = 0;
+	int i, len = 0;
 	while (!in.eof()) {
 		len = 0;
 		for (i = 0; i < 3; i++) {
@@ -100,13 +98,6 @@ void codec_base64::encode(istream &in, ostream &out) {
 			for (i = 0; i < 4; i++) {
 				out.put(_out[i]);
 			}
-			blocksout++;
-		}
-		if (blocksout >= (linesize / 4) || in.eof()) {
-			if (blocksout) {
-				out << endl;
-			}
-			blocksout = 0;
 		}
 	}
 }
@@ -144,4 +135,3 @@ void codec_base64::decode(istream &in, ostream &out) {
 }
 
 }} // namespace
-
