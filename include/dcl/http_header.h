@@ -136,6 +136,7 @@ public:
 	std::string domain;
 	datetime expires;
 	std::string path;
+	std::string same_site;
 	//! Constructor
 	http_cookie(): secure(false), http_only(false) { };
 	//! Constructor

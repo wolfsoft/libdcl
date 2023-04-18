@@ -7,5 +7,5 @@ before_install:
   - sudo apt-get install autopoint libtool automake gettext autoconf autotools-dev libssl-dev xsltproc libapr1-dev apache2-dev unixodbc-dev
 script:
   - ./autogen.sh
-  - ./configure --disable-gtk --disable-qt --disable-winapi --disable-doxygen-doc && make && make check
+  - ./configure --disable-gtk --disable-qt --disable-winapi --disable-doxygen-doc && make -j`nproc` && make -j`nproc` check
 

@@ -254,6 +254,9 @@ http_cookie::http_cookie(const std::string &cookie): secure(false), http_only(fa
 		if (p == string("path"))
 			path = v;
 		else
+		if (p == string("samesite"))
+			same_site = v;
+		else
 		if (p == string("secure"))
 			secure = true;
 		else
@@ -276,6 +279,8 @@ std::string http_cookie::str() const {
 			s += "; domain=" + domain;
 		if (!path.empty())
 			s += "; path=" + path;
+		if (!same_site.empty())
+			s += "; SameSite=" + same_site;
 		if (secure)
 			s += "; secure";
 		if (http_only)

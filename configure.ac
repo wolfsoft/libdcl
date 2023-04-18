@@ -2,7 +2,7 @@
 # configure.ac
 # This file is part of dbPager Classes Library (DCL)
 #
-# Copyright (c) 2008 Dennis Prochko <wolfsoft@mail.ru>
+# Copyright (c) 2008-2023 Dennis Prochko <dennis.prochko@gmail.com>
 #
 # DCL is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -22,10 +22,10 @@
 # pre-initialization
 m4_define([V_MAJOR], 0)
 m4_define([V_MINOR], 2)
-m4_define([V_REVISION], 0)
+m4_define([V_REVISION], 1)
 
 # autoconf initialization
-AC_INIT([libdcl], [V_MAJOR.V_MINOR.V_REVISION], [wolfsoft@mail.ru])
+AC_INIT([libdcl], [V_MAJOR.V_MINOR.V_REVISION], [dennis.prochko@gmail.com])
 AC_PREREQ([2.61])
 AC_CONFIG_AUX_DIR(build)
 AC_CONFIG_HEADERS([config.h])
@@ -65,7 +65,7 @@ AC_SUBST(VERSION_REVISION)
 #    release, then set age to 0.
 #
 ABI_CUR=6
-ABI_REV=0
+ABI_REV=1
 ABI_AGE=5
 AC_SUBST(ABI_CUR)
 AC_SUBST(ABI_REV)
@@ -259,7 +259,7 @@ AC_ARG_WITH(gnutls,
 
 ssl_ok=no;
 
-PKG_CHECK_MODULES(OPENSSL, [openssl >= 0.9.0],
+PKG_CHECK_MODULES(OPENSSL, [openssl >= 1.0.0],
 	[
 		if test "$use_openssl" != "no"; then
 			AC_DEFINE([HAVE_OPENSSL],[1],[Use OpenSSL library])
