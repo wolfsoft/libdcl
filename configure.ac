@@ -22,7 +22,7 @@
 # pre-initialization
 m4_define([V_MAJOR], 0)
 m4_define([V_MINOR], 2)
-m4_define([V_REVISION], 1)
+m4_define([V_REVISION], 2)
 
 # autoconf initialization
 AC_INIT([libdcl], [V_MAJOR.V_MINOR.V_REVISION], [dennis.prochko@gmail.com])
@@ -64,8 +64,8 @@ AC_SUBST(VERSION_REVISION)
 # 6. If any interfaces have been removed since the last public
 #    release, then set age to 0.
 #
-ABI_CUR=6
-ABI_REV=1
+ABI_CUR=7
+ABI_REV=0
 ABI_AGE=5
 AC_SUBST(ABI_CUR)
 AC_SUBST(ABI_REV)

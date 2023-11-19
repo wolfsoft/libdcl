@@ -32,7 +32,7 @@ namespace dbp {
 */
 class rwlock_exception: public dbp::exception {
 public:
-	rwlock_exception(const std::string &msg = "") throw():
+	rwlock_exception(const std::string &msg = "") noexcept:
 	  dbp::exception(msg) { }
 };
 

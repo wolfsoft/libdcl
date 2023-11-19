@@ -37,7 +37,7 @@ namespace dbp {
 class socket_exception: public exception {
 public:
 	//! Constructor
-	socket_exception(const std::string &msg = "") throw(): exception(msg) { }
+	socket_exception(const std::string &msg = "") noexcept: exception(msg) { }
 };
 
 //!	Represents socket's address list and a port

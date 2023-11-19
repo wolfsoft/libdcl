@@ -35,7 +35,7 @@ class exception_system: public dbp::exception {
 public:
 	exception_system(int c, const std::string &msg): dbp::exception(msg),
 	  code(c) { }
-	virtual const char* what() const throw() {
+	virtual const char* what() const noexcept {
 		char *m = NULL;
 		FormatMessage(
 		  FORMAT_MESSAGE_ALLOCATE_BUFFER | 

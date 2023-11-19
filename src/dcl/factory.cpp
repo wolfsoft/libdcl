@@ -26,17 +26,17 @@ namespace dbp {
 
 using namespace std;
 
-const char* factory_non_reg_exception::what() const throw() {
+const char* factory_non_reg_exception::what() const noexcept {
 	return (format(_("Can't create class {0}: the class with this name "
 	  "is not registered")) % get_message()).str().c_str();
 }
 
-const char* factory_already_reg_exception::what() const throw() {
+const char* factory_already_reg_exception::what() const noexcept {
 	return (format(_("Can't register class {0}: the class with this name "
 	  "is already registered")) % get_message()).str().c_str();
 }
 
-const char* factory_unreg_exception::what() const throw() {
+const char* factory_unreg_exception::what() const noexcept {
 	return (format(_("Can't unregister class {0}: the class is not "
 	  "registered")) % get_message()).str().c_str();
 }

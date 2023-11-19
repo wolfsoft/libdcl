@@ -285,7 +285,7 @@ class type_conversion_exception: public dbp::exception { };
 	The to_string template function converts the value of any type to string.
 */
 template <class TYPE>
-std::string to_string(const TYPE value) throw(type_conversion_exception) {
+std::string to_string(const TYPE value) {
 	std::ostringstream s;
 	s.imbue(std::locale::classic());
 	try {
@@ -298,23 +298,23 @@ std::string to_string(const TYPE value) throw(type_conversion_exception) {
 }
 
 template <>
-std::string to_string<const char*>(const char *value) throw(type_conversion_exception);
+std::string to_string<const char*>(const char *value);
 
 template <>
-std::string to_string<const std::string&>(const std::string &value) throw(type_conversion_exception);
+std::string to_string<const std::string&>(const std::string &value);
 
 template <>
-std::string to_string<int>(int value) throw(type_conversion_exception);
+std::string to_string<int>(int value);
 
 template <>
-std::string to_string<void*>(void *value) throw(type_conversion_exception);
+std::string to_string<void*>(void *value);
 
 /*
 template <>
-std::string to_string<float>(float value) throw(type_conversion_exception);
+std::string to_string<float>(float value);
 
 template <>
-std::string to_string<double>(double value) throw(type_conversion_exception);
+std::string to_string<double>(double value);
 */
 //!	Convert of a string to a given type
 /*!
@@ -322,7 +322,7 @@ std::string to_string<double>(double value) throw(type_conversion_exception);
 	any type.
 */
 template <class TYPE>
-TYPE from_string(const std::string &value) throw(type_conversion_exception) {
+TYPE from_string(const std::string &value) {
 	std::istringstream s(value);
 	s.imbue(std::locale::classic());
 	TYPE rslt;
@@ -337,28 +337,22 @@ TYPE from_string(const std::string &value) throw(type_conversion_exception) {
 }
 
 template <>
-const char* from_string<const char*>(const std::string &value)
-  throw(type_conversion_exception);
+const char* from_string<const char*>(const std::string &value);
 
 template <>
-std::string from_string<std::string>(const std::string &value)
-  throw(type_conversion_exception);
+std::string from_string<std::string>(const std::string &value);
 
 template <>
-int from_string<int>(const std::string &value)
-  throw(type_conversion_exception);
+int from_string<int>(const std::string &value);
 
 template <>
-void* from_string<void*>(const std::string &value)
-  throw(type_conversion_exception);
+void* from_string<void*>(const std::string &value);
 
 template <>
-float from_string<float>(const std::string &value)
-  throw(type_conversion_exception);
+float from_string<float>(const std::string &value);
 
 template <>
-double from_string<double>(const std::string &value)
-  throw(type_conversion_exception);
+double from_string<double>(const std::string &value);
 
 } // namespace
 

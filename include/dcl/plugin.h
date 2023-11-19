@@ -84,8 +84,7 @@ void finalize();
 		
 		Fourth function should perform plugin finalization if needed.
 	*/
-	virtual void load(const std::string &file_name)
-	  throw(plugin_exception) = 0;
+	virtual void load(const std::string &file_name) = 0;
 	//!	Initialize the plugin
 	/*!
 		This function initializes the plugin.
@@ -130,7 +129,7 @@ public:
 	//! Destructor
 	~plugin();
 	virtual void init(void *data);
-	virtual void load(const std::string &file_name) throw(plugin_exception);
+	virtual void load(const std::string &file_name);
 	virtual disposable* create_object(const std::string &object_name);
 	virtual void destroy_object(disposable *object);
 protected:

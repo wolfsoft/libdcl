@@ -35,19 +35,19 @@ namespace dbp {
 class exception: public std::exception {
 public:
 	//! Constructor
-	exception(const std::string &msg = "") throw(): _msg(msg) { }
+	exception(const std::string &msg = "") noexcept: _msg(msg) { }
 	//! Destructor
-	virtual ~exception() throw() { }
+	virtual ~exception() noexcept { }
 	//! Error message
 	/*!
 		Returns a C-style character string describing the general
 		cause of the current error.
 	*/
-	virtual const char* what() const throw() {
+	virtual const char* what() const noexcept {
 		return _msg.c_str();
 	}
 protected:
-	const std::string& get_message() const throw() {
+	const std::string& get_message() const noexcept {
 		return _msg;
 	}
 private:

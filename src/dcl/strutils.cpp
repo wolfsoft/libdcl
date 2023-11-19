@@ -160,24 +160,24 @@ std::size_t char_length::operator()(std::string const &text,
 }
 
 template <>
-std::string to_string(const char *value) throw(type_conversion_exception) {
+std::string to_string(const char *value) {
 	return value ? std::string(value) : "";
 }
 
 template <>
-std::string to_string(const std::string &value) throw(type_conversion_exception) {
+std::string to_string(const std::string &value) {
 	return value;
 }
 
 template <>
-std::string to_string(int value) throw(type_conversion_exception) {
+std::string to_string(int value) {
 	char buf[64];
 	snprintf(buf, 64, "%d", value);
 	return string(buf);
 }
 
 template <>
-std::string to_string(void* value) throw(type_conversion_exception) {
+std::string to_string(void* value) {
 	char buf[64];
 	snprintf(buf, 64, "%p", (intptr_t)value);
 	return string(buf);
@@ -185,26 +185,26 @@ std::string to_string(void* value) throw(type_conversion_exception) {
 
 /*
 template <>
-std::string to_string(float value) throw(type_conversion_exception) {
+std::string to_string(float value) {
 	char buf[4 + FLT_MANT_DIG - FLT_MIN_EXP];
 	snprintf(buf, 4 + FLT_MANT_DIG - FLT_MIN_EXP, "%f", value);
 	return string(buf);
 }
 
 template <>
-std::string to_string(double value) throw(type_conversion_exception) {
+std::string to_string(double value) {
 	char buf[4 + DBL_MANT_DIG - DBL_MIN_EXP];
 	snprintf(buf, 4 + DBL_MANT_DIG - DBL_MIN_EXP, "%lf", value);
 	return string(buf);
 }
 */
 template <>
-const char* from_string(const std::string &value) throw(type_conversion_exception) {
+const char* from_string(const std::string &value) {
 	return value.c_str();
 }
 
 template <>
-std::string from_string(const std::string &value) throw(type_conversion_exception) {
+std::string from_string(const std::string &value) {
 	return value;
 }
 
@@ -312,22 +312,22 @@ double my_strtod(const char *str, char **endptr) {
 }
 
 template <>
-int from_string(const std::string &value) throw(type_conversion_exception) {
+int from_string(const std::string &value) {
 	return strtol(value.c_str(), NULL, 0);
 }
 
 template <>
-void* from_string(const std::string &value) throw(type_conversion_exception) {
+void* from_string(const std::string &value) {
 	return (void*)strtoull(value.c_str(), NULL, 0);
 }
 
 template <>
-float from_string(const std::string &value) throw(type_conversion_exception) {
+float from_string(const std::string &value) {
 	return (float)my_strtod(value.c_str(), NULL);
 }
 
 template <>
-double from_string(const std::string &value) throw(type_conversion_exception) {
+double from_string(const std::string &value) {
 	return my_strtod(value.c_str(), NULL);
 }
 

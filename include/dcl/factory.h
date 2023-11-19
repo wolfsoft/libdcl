@@ -57,21 +57,21 @@ class factory_non_reg_exception: public factory_exception {
 public:
 	factory_non_reg_exception(const std::string &msg):
 	  factory_exception(msg) { }
-	virtual const char* what() const throw();
+	virtual const char* what() const noexcept;
 };
 
 class factory_already_reg_exception: public factory_exception {
 public:
 	factory_already_reg_exception(const std::string &msg):
 	  factory_exception(msg) { }
-	virtual const char* what() const throw();
+	virtual const char* what() const noexcept;
 };
 
 class factory_unreg_exception: public factory_exception {
 public:
 	factory_unreg_exception(const std::string &msg):
 	  factory_exception(msg) { }
-	virtual const char* what() const throw();
+	virtual const char* what() const noexcept;
 };
 
 //!	Object factory class template

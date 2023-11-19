@@ -32,7 +32,7 @@ namespace dbp {
 */
 class mutex_exception: public dbp::exception {
 public:
-	mutex_exception(const std::string &msg = "") throw():
+	mutex_exception(const std::string &msg = "") noexcept:
 	  dbp::exception(msg) { }
 };
 

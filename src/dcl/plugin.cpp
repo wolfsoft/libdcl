@@ -40,7 +40,7 @@ plugin::~plugin() {
 	delete _impl;
 }
 
-void plugin::load(const std::string &filename) throw(plugin_exception) {
+void plugin::load(const std::string &filename) {
 	_impl->load(filename);
 }
 

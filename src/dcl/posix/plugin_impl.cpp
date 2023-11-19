@@ -33,7 +33,7 @@ public:
 	plugin_impl(): handle(NULL) { };
 	virtual ~plugin_impl();
 	virtual void init(void *data);
-	virtual void load(const std::string &file_name) throw(plugin_exception);
+	virtual void load(const std::string &file_name);
 	virtual disposable* create_object(const std::string &object_name);
 	virtual void destroy_object(disposable *object);
 protected:
@@ -56,7 +56,7 @@ plugin_impl::~plugin_impl() {
 		dlclose(handle);
 }
 
-void plugin_impl::load(const std::string &file_name) throw(plugin_exception) {
+void plugin_impl::load(const std::string &file_name) {
 	_filename = file_name;
 	// loading a dynamic library
 	if (handle)

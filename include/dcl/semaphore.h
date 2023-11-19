@@ -32,7 +32,7 @@ namespace dbp {
 */
 class semaphore_exception: public dbp::exception {
 public:
-	semaphore_exception(const std::string &msg = "") throw():
+	semaphore_exception(const std::string &msg = "") noexcept:
 	  dbp::exception(msg) { }
 };
 
