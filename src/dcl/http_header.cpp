@@ -285,6 +285,8 @@ std::string http_cookie::str() const {
 			s += "; secure";
 		if (http_only)
 			s += "; HttpOnly";
+		if (partitioned)
+			s += "; Partitioned";
 	}
 	return s;
 }
