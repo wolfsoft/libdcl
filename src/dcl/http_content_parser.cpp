@@ -141,7 +141,7 @@ http_content_parser::~http_content_parser() {
 }
 
 http_content_elements http_content_parser::parse() const {
-	auto_ptr<http_parser> parser(pimpl->create_parser());
+	unique_ptr<http_parser> parser(pimpl->create_parser());
 	return parser->parse();
 }
 

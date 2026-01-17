@@ -18,7 +18,8 @@ class database_pool: public pool<connection>, public singleton<database_pool> {
 	friend class singleton<database_pool>;
 private:
 	database_pool(): pool<connection>() { };
-	database_pool(std::auto_ptr<pool_size_policy> policy): pool<connection>(policy) { };
+	//database_pool(std::unique_ptr<pool_size_policy> policy): pool<connection>(std::move(policy)) { };
+	database_pool(pool_size_policy* policy): pool<connection>(std::unique_ptr<pool_size_policy>(policy)) { };
 };
 
 
@@ -30,9 +31,9 @@ public:
 	int on_execute() {
 		bool rslt = false;
 
-		auto_ptr<pool_size_policy> pool_size;
-		pool_size.reset(new pool_size_unlimited_policy());
-		database_pool &pool = database_pool::instance(pool_size);
+		//unique_ptr<pool_size_policy> pool_size;
+		//pool_size.reset(new pool_size_unlimited_policy());
+		database_pool &pool = database_pool::instance(new pool_size_unlimited_policy());
 
 		pool_ptr<connection> db = pool.acquire(dsn + user);
 		if (!db->is_open())
@@ -98,7 +99,7 @@ public:
 
 		return rslt ? 0 : 1;
 	}
-	
+
 	int get_connections_number(connection &db) {
 		query q(db);
 		query::fields f = q.execute("SELECT count(*) FROM pg_stat_activity;");

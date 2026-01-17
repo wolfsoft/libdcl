@@ -74,7 +74,7 @@ public:
 	pool() {
 		size_policy.reset(new pool_size_unlimited_policy());
 	}
-	pool(std::auto_ptr<pool_size_policy> ps): size_policy(ps) { }
+	pool(std::unique_ptr<pool_size_policy> ps): size_policy(std::move(ps)) { }
 	//! Destructor
 	virtual ~pool() {
 		std::for_each(_all.begin(), _all.end(), delete_item);
@@ -83,7 +83,7 @@ public:
 	/*!
 		Create the object instance if the instance is not found in the
 		pool or return the instance from the pool otherwise.
-		
+
 		\returns the smart pointer to the object instance
 	*/
 	pool_ptr<T> acquire(const std::string &key = std::string("")) {
@@ -108,7 +108,7 @@ private:
 	queue_idx _free;
 	std::vector<T*> _all;
 	mutex cs;
-	std::auto_ptr<pool_size_policy> size_policy;
+	std::unique_ptr<pool_size_policy> size_policy;
 	T* acquire_item(const std::string &key) {
 		size_policy->lock();
 		mutex_guard guard(cs);

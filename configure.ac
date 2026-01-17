@@ -21,8 +21,8 @@
 
 # pre-initialization
 m4_define([V_MAJOR], 0)
-m4_define([V_MINOR], 2)
-m4_define([V_REVISION], 2)
+m4_define([V_MINOR], 3)
+m4_define([V_REVISION], 0)
 
 # autoconf initialization
 AC_INIT([libdcl], [V_MAJOR.V_MINOR.V_REVISION], [dennis.prochko@gmail.com])
@@ -42,14 +42,14 @@ AC_SUBST(VERSION_REVISION)
 # define ABI version as current:revision:age
 #
 # current
-#  The most recent interface number that this library implements. 
+#  The most recent interface number that this library implements.
 # revision
-#  The implementation number of the current interface. 
+#  The implementation number of the current interface.
 # age
 #  The difference between the newest and oldest interfaces that
 #  this library implements. In other words, the library
 #  implements all the interface numbers in the range from
-#  number current - age to current. 
+#  number current - age to current.
 #
 # 1. Start with version information of 0:0:0 for each libtool library.
 # 2. Update the version information only immediately before a public
@@ -64,9 +64,9 @@ AC_SUBST(VERSION_REVISION)
 # 6. If any interfaces have been removed since the last public
 #    release, then set age to 0.
 #
-ABI_CUR=7
+ABI_CUR=8
 ABI_REV=0
-ABI_AGE=5
+ABI_AGE=0
 AC_SUBST(ABI_CUR)
 AC_SUBST(ABI_REV)
 AC_SUBST(ABI_AGE)
@@ -93,6 +93,7 @@ AM_GNU_GETTEXT_VERSION([0.17])
 # check for programs
 AC_ISC_POSIX
 AC_PROG_CXX
+AX_CXX_COMPILE_STDCXX_11([noext],[mandatory])
 AC_PROG_SED
 LT_PROG_RC
 

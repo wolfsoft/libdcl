@@ -18,7 +18,7 @@
  * Foundation, Inc., 51 Franklin St, Fifth Floor,
  * Boston, MA  02110-1301  USA
  */
- 
+
 #ifndef _NONCOPYABLE_H_
 #define _NONCOPYABLE_H_
 
@@ -33,8 +33,8 @@ protected:
 	noncopyable() { };
 	~noncopyable() { };
 private:
-	noncopyable(const noncopyable&);
-	const noncopyable& operator=(const noncopyable&);
+	noncopyable(const noncopyable&) = delete;
+	const noncopyable& operator=(const noncopyable&) = delete;
 };
 
 } //namespace

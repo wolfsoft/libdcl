@@ -34,7 +34,7 @@ namespace dbp {
 	This class template is intended to provide singleton pattern. It is
 	useful for development of classes that should be exist in one
 	instance only.
-	
+
 	Usage:
 	\code
 class test: public singleton<test> {
@@ -55,7 +55,7 @@ public:
 	/*!
 		If the object was not instanceated, creates the instance. Returns
 		the instance reference.
-		
+
 		\return the object instance reference
 	*/
 	static T& instance() {
@@ -78,20 +78,12 @@ public:
 protected:
 	singleton() { };
 private:
-#ifdef HAVE_CXX11
 	static std::unique_ptr<T> _instance;
-#else
-	static std::auto_ptr<T> _instance;
-#endif
 	static mutex _cs;
 };
 
 template <class T>
-#ifdef HAVE_CXX11
 std::unique_ptr<T> singleton<T>::_instance;
-#else
-std::auto_ptr<T> singleton<T>::_instance;
-#endif
 
 template <class T>
 mutex singleton<T>::_cs;

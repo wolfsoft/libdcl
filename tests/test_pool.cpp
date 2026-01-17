@@ -10,7 +10,7 @@ using namespace dbp;
 #define MAX_POOL_SIZE 5
 
 pool<string> _pool;
-pool<string> _pool_l(auto_ptr<pool_size_policy>(new pool_size_limited_policy(MAX_POOL_SIZE)));
+pool<string> _pool_l(unique_ptr<pool_size_policy>(new pool_size_limited_policy(MAX_POOL_SIZE)));
 
 class test {
 public:

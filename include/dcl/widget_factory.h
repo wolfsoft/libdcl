@@ -39,10 +39,10 @@ class application_int;
 */
 class widget_factory: public disposable {
 public:
-	typedef std::auto_ptr<application_int> gui_application_ptr;
+	typedef std::unique_ptr<application_int> gui_application_ptr;
 	//! Create gui_application object
 	virtual gui_application_ptr create_application() = 0;
-	typedef std::auto_ptr<message_box> message_box_ptr;
+	typedef std::unique_ptr<message_box> message_box_ptr;
 	//! Create message_box object
 	virtual message_box_ptr create_message_box(
 	  const std::string &title, const std::string &message,
