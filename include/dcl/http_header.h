@@ -131,6 +131,7 @@ class http_cookie {
 public:
 	bool secure;
 	bool http_only;
+	bool partitioned;
 	std::string name;
 	std::string value;
 	std::string domain;
